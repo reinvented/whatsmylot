@@ -12,6 +12,10 @@ html, body, #map {
     height: 200px;
 }
 
+#content_info {
+    display: none;
+}
+
 #content_map {
     padding: 0 !important; 
     position: absolute !important; 

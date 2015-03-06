@@ -169,6 +169,7 @@ function updateLotInfo(mylot) {
     $('#info_acres_clark').html(numberWithCommas(meta.acres_clark) + ' acres');
     $('#info_acres_modern').html(numberWithCommas(meta.acres_modern) + ' acres');
     
+    $('#content_info').show();
 }
 
 /**
