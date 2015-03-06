@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>What's my Lot</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<meta name="description" content="Find your township lot on Prince Edward Island, Canada.">
-		<meta name="author" content="Peter Rukavina">
+    <head>
+        <meta charset="utf-8">
+        <title>What's my Lot</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="description" content="Find your township lot on Prince Edward Island, Canada.">
+        <meta name="author" content="Peter Rukavina">
         <link rel="icon" sizes="192x192" href="/icons/holland-192.png">
-		<link rel="apple-touch-icon" href="/icons/holland-60.png">
+        <link rel="apple-touch-icon" href="/icons/holland-60.png">
         <link rel="apple-touch-icon" sizes="76x76" href="/icons/holland-76.png">
         <link rel="apple-touch-icon" sizes="128x128" href="/icons/holland-128.png">
         <link rel="apple-touch-icon" sizes="152x152" href="/icons/holland-152.png">
         <link rel="shortcut icon" type="image/png" href="/icons/favicon.ico"/>
         <meta name="mobile-web-app-capable" content="yes">
-		<link rel="stylesheet" href="style/jquery.mobile-1.4.5.min.css" />
-		<link rel="stylesheet" href="style/lots.css" />
-		<link rel="stylesheet" href="leaflet/leaflet.css" />
-		<link rel="stylesheet" href="leaflet/leaflet.label.css" />
-	</head>
-	<body>
-	
-    	<div data-role="page" data-theme="a" id="page-lot" data-position="fixed">
-			<div data-role="header" data-theme="a" data-nobackbtn="true">
-				<h1>What's My Lot?</h1>
-			</div>
+        <link rel="stylesheet" href="style/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" href="style/lots.css" />
+        <link rel="stylesheet" href="leaflet/leaflet.css" />
+        <link rel="stylesheet" href="leaflet/leaflet.label.css" />
+    </head>
+    <body>
+    
+        <div data-role="page" data-theme="a" id="page-lot" data-position="fixed">
+            <div data-role="header" data-theme="a" data-nobackbtn="true">
+                <h1>What's My Lot?</h1>
+            </div>
             <div data-role="content" id="content_lot">
                 <h3 id="lotlabel"></h3>
                 <div id="number">
@@ -37,19 +37,19 @@
             </div>
         </div>
         
-    	<div data-role="page" data-theme="a" id="page-map" data-position="fixed">
-			<div data-role="header" data-theme="a" data-add-back-btn="true">
-				<h1>What's My Lot?</h1>
-			</div>
+        <div data-role="page" data-theme="a" id="page-map" data-position="fixed">
+            <div data-role="header" data-theme="a" data-add-back-btn="true">
+                <h1>What's My Lot?</h1>
+            </div>
             <div data-role="content" id="content_map">
                 <div id="map"></div>
             </div>
         </div>
         
-    	<div data-role="page" data-theme="a" id="page-info" data-position="fixed">
-			<div data-role="header" data-theme="a" data-add-back-btn="true">
-				<h1>About This Lot</h1>
-			</div>
+        <div data-role="page" data-theme="a" id="page-info" data-position="fixed">
+            <div data-role="header" data-theme="a" data-add-back-btn="true">
+                <h1>About This Lot</h1>
+            </div>
 
             <div data-role="content" id="content_info">
                 <div id="info_youarein">YOU ARE IN</div>
@@ -76,17 +76,17 @@
                         <th>Modern Map</th>
                         <td id="info_acres_modern"></td>
                     </tr>
-                </table>		    
-            </div>		
-		</div>
+                </table>            
+            </div>      
+        </div>
 
-    	<div data-role="page" data-theme="a" id="page-help" data-position="fixed">
-		
-			<div data-role="header" data-theme="a" data-add-back-btn="true">
-				<h1>What's My Lot Help</h1>
-			</div>
+        <div data-role="page" data-theme="a" id="page-help" data-position="fixed">
+        
+            <div data-role="header" data-theme="a" data-add-back-btn="true">
+                <h1>What's My Lot Help</h1>
+            </div>
             <div data-role="content" id="content_help">
-		
+        
                 <h2>What's a lot?</h2>
             
                 <p>If you're on Prince Edward Island, this app uses the
@@ -185,15 +185,15 @@
                 Residence, University of Prince Edward Island, Robertson
                 Library</a>.</p>
             </div>    
-		</div>
-		<!-- Why are the JavaScripts down here?  Check out http://developer.yahoo.com/blogs/ydn/high-performance-sites-rule-6-move-scripts-bottom-7200.html -->
-		<script src="js/jquery-1.10.2.min.js"></script>
-		<script src="js/jquery.mobile-1.4.5.min.js"></script>
-		<script src="leaflet/leaflet.js"></script>
-		<script src="leaflet/leaflet.label.js"></script>
-		<script src="leaflet/leaflet-pip.min.js"></script>
-		<script src="js/lots.js"></script><!-- Local JavaScript. The guts of the app are in here. -->
-		<script src="data/pei-lots-wgs84-simplified.geojson"></script>
-		<script src="data/lot-data.json"></script>
-	</body>
+        </div>
+        <!-- Why are the JavaScripts down here?  Check out http://developer.yahoo.com/blogs/ydn/high-performance-sites-rule-6-move-scripts-bottom-7200.html -->
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script src="leaflet/leaflet.js"></script>
+        <script src="leaflet/leaflet.label.js"></script>
+        <script src="leaflet/leaflet-pip.min.js"></script>
+        <script src="js/lots.js"></script><!-- Local JavaScript. The guts of the app are in here. -->
+        <script src="data/pei-lots-wgs84-simplified.geojson"></script>
+        <script src="data/lot-data.json"></script>
+    </body>
 </html>
