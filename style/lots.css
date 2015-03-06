@@ -1,0 +1,148 @@
+html, body, #map {
+    height: 100%;
+}
+
+#map { 
+    height: 100%; 
+    min-height: 100%;
+}
+
+#spinner {
+    width: 200px;
+    height: 200px;
+}
+
+#content_map {
+    padding: 0 !important; 
+    position: absolute !important; 
+    top: 45px !important;
+    right: 0;
+    bottom: 0;
+    left: 0 !important;
+}
+
+#content_lot {
+    text-align: center;
+}
+
+#number {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 32pt;
+    font-weight: bold;
+}
+
+#info_lotname {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 24pt;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+}
+
+#waitmessage {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 24pt;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#navbar {
+  display: none;
+}
+
+#page-help p, #page-info p {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14pt;
+    margin: 5px 0 5px 0;
+}
+
+#page-help li, #page-info li {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12pt;
+    margin: 5px 0 5px 0;
+}
+
+#lotlabel {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 18pt;
+    margin: 0 0 5px 0;
+    color: #444;
+    display: none;
+}
+
+#info_youarein {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 15pt;
+    margin: 0 0 4px 0;
+    color: #444;
+    line-height: 1;
+    text-align: center;
+}
+
+.meta_center {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14pt;
+    margin: 0 0 4px 0;
+    line-height: 1;
+    text-align: center;
+}
+
+#info_bio {
+    max-width: 500px;
+    font-family: Helvetica, Arial, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#info_bio p {
+    text-align: left;
+    font-size: 12pt;
+    line-height: 1.5;
+    margin: 8px 0 8px 0;
+}   
+
+#info_acres {
+    font-family: Helvetica, Arial, sans-serif;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#info_acres, #info_acres td, #info_acres th {
+    border-collapse: collapse;
+    border: 1px solid #666;
+}
+
+#info_acres_header {
+    background: #eee;
+}
+
+#info_acres_header th {
+    text-align: center !important;
+}
+
+#info_acres td {
+    text-align: right;
+    padding: 5px;
+} 
+
+#info_acres th {
+    text-align: left;
+    padding: 5px;
+} 
+
+#page-help h2, #page-info h2 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16pt;
+    margin: 10px 0 5px 0;
+}
+
+#infobutton, #mapbutton, #helpbutton {
+  width: 50px;
+  height: 50px;
+}
+
+#infobutton {
+    display: none;
+}
+

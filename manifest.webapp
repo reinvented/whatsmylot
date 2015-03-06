@@ -1,0 +1,26 @@
+{
+  "version": "2.0",
+  "name": "What's My Lot?",
+  "description": "Identifies which Prince Edward Island township lot, from the original 1765 survey of the Island, you are standing in.",
+  "launch_path": "/index.html",
+  "icons": {
+    "16": "/icons/holland-16.png",
+    "48": "/icons/holland-48.png",
+    "60": "/icons/holland-60.png",
+    "128": "/icons/holland-128.png"
+  },
+  "developer": {
+    "name": "Peter Rukavina",
+    "url": "http://ruk.ca"
+  },
+  "type": "web",
+  "permissions": {
+    "geolocation": {
+      "description": "Required to identify your location."
+    }
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "en"
+}
