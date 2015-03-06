@@ -141,8 +141,6 @@ function findMyLot(lng, lat, layer) {
 */
 function updateLotInfo(mylot) {
 
-    mylot = 31;
-
     if ((mylot == "CHARLOTTETOWN") || (mylot == "PRINCETOWN") || (mylot == "GEORGETOWN")) {
         $('#info_lotname').html(mylot);
     }
