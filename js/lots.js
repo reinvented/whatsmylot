@@ -8,6 +8,7 @@ var map = L.map('map', { 'zoomControl': false } ).setView( [46.50105, -63.2014],
 var old_latitude = false;
 var old_longitude = false;
 var lotsWeVisited = false;
+var marker = false;
 var lot_polygons = [];
 
 /**
@@ -52,11 +53,11 @@ $('#page-lot').on('pageinit',function() {
         .on('locationfound', function(e){
             
             if ((e.longitude != old_longitude) || (e.latitude != old_latitude)) {
-                if (typeof marker != 'undefined') {
+                if (marker != false) {
                     marker.setLatLng(e.latlng).update();
                 }
                 else {
-                    var marker = L.marker(e.latlng).addTo(map);
+                    marker = L.marker(e.latlng).addTo(map);
                 }
                 map.setView(e.latlng, 12);
 
