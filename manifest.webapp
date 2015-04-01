@@ -22,5 +22,6 @@
   "installs_allowed_from": [
     "*"
   ],
-  "default_locale": "en"
+  "default_locale": "en",
+  "fullscreen": "true"
 }
