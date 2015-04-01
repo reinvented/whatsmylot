@@ -67,12 +67,12 @@ $('#page-lot').on('pageinit',function() {
                     lotsWeVisited[mylot] = Date().toString();
                     localStorage.lotsWeVisited = JSON.stringify(lotsWeVisited);
                 }
-
+                
                 if (mylot) {
                     if ((mylot == "CHARLOTTETOWN") || (mylot == "PRINCETOWN") || (mylot == "GEORGETOWN")) {
                         $('#lotlabel').html("YOU ARE IN");
                         $('#number').css('font-size', '24pt');
-                        $('#number').css('letter-spacing', '-5');
+                        $('#number').css('letter-spacing', '-2px');
                         $('#navbar').show();
                     }
                     else {
