@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "name": "What's My Lot?",
+  "name": "WhatsMyLot?",
   "description": "Identifies which Prince Edward Island township lot, from the original 1765 survey of the Island, you are standing in.",
   "launch_path": "/index.html",
   "icons": {
