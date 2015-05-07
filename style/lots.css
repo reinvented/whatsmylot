@@ -52,9 +52,10 @@ html, body, #map {
 
 #navbar {
   display: none;
+  margin-top: 5px;
 }
 
-#page-help p, #page-info p {
+#page-help p, #page-info p, p.location_notes {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 14pt;
     margin: 5px 0 5px 0;

@@ -7,7 +7,7 @@
 var map = L.map('map', { 'zoomControl': false } ).setView( [46.50105, -63.2014], 9);
 var old_latitude = false;
 var old_longitude = false;
-var lotsWeVisited = false;
+var lotsWeVisited = {};
 var marker = false;
 var lot_polygons = [];
 
@@ -16,9 +16,15 @@ var lot_polygons = [];
 */
 $('#page-lot').on('pageinit',function() {
 
-    if (localStorage.lotsWeVisited !== undefined) {
+//     localStorage.lotsWeVisited = undefined;
+
+    if (localStorage.lotsWeVisited !== undefined && localStorage.lotsWeVisited !== 'false') {
+        console.log("Found previously-visited lots!");
+        console.log(localStorage.lotsWeVisited);
         lotsWeVisited = JSON.parse(localStorage.lotsWeVisited);
     }
+    
+    console.log(lotsWeVisited);
     
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 18,
@@ -42,6 +48,7 @@ $('#page-lot').on('pageinit',function() {
             }
             lot_polygons[feature.properties.LOT] = polygon;
             if (lotsWeVisited[feature.properties.LOT]) {
+                console.log("We were here before!");
                 polygon.setStyle({ 'fillColor': '#f00' });
             }
         }
@@ -63,28 +70,39 @@ $('#page-lot').on('pageinit',function() {
 
                 old_longitude = e.longitude;
                 old_latitude = e.latitude;
+
                 var mylot = findMyLot(e.longitude, e.latitude, layer);
+
                 if (!lotsWeVisited.hasOwnProperty(mylot)) {
-                    lotsWeVisited[mylot] = Date().toString();
+                    console.log("On a new lot!");
+                    lotsWeVisited[mylot.toString()] = Date().toString();
+                    console.log(mylot);
+                    console.log(lotsWeVisited);
+                    console.log(JSON.stringify(lotsWeVisited));
+
                     localStorage.lotsWeVisited = JSON.stringify(lotsWeVisited);
+                    console.log(localStorage.lotsWeVisited);
                 }
-                
+
                 if (mylot) {
                     if ((mylot == "CHARLOTTETOWN") || (mylot == "PRINCETOWN") || (mylot == "GEORGETOWN")) {
                         $('#lotlabel').html("YOU ARE IN");
                         $('#number').css('font-size', '24pt');
                         $('#number').css('letter-spacing', '-2px');
+                        $('#number').css('line-height', '40pt');
                         $('#navbar').show();
                     }
                     else {
                         $('#lotlabel').html("YOU ARE IN LOT");
                         $('#number').css('font-size', '172pt');
-                        $('#number').css('letter-spacing', '-15px');
+                        $('#number').css('letter-spacing', '-14px');
+                        $('#number').css('line-height', '150pt');
                         $('#navbar').show();
                    }
                    $('#lotlabel').show();
                    $('#number').html(mylot);
                    $('#infobutton').show();
+                   $('#location_notes').html(showAccuracy(e.accuracy));
                    updateLotInfo(mylot);
                 }
                 else {
@@ -93,6 +111,7 @@ $('#page-lot').on('pageinit',function() {
                     $('#number').css('letter-spacing', 'normal');
                     $('#lotlabel').html("YOU ARE");
                     $('#number').html("NOT ON PEI");
+                    $('#location_notes').html("If you <i>are</i> on Prince Edward Island, then your device has, alas, misidentified your location.</p>If you actually <i>are not</i> on PEI, why not?</p><p><a href='#page-help'>Learn more here</a>.");
                     $('#infobutton').hide();
                     $('#navbar').hide();
                 }
@@ -178,4 +197,16 @@ function updateLotInfo(mylot) {
 */
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+/**
+* Show metres or kilometers depending on the distance.
+*/
+function showAccuracy(x) {
+  if (x > 1000) {
+    return '(Accurate to ' + Math.round(x / 1000) + ' km)';
+  }
+  else {
+    return '(Accurate to ' + x + ' m)';
+  }
 }
