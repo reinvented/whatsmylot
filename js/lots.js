@@ -4,27 +4,22 @@
 /**
 * Define global variables.
 */
-var map = L.map('map', { 'zoomControl': false } ).setView( [46.50105, -63.2014], 9);
-var old_latitude = false;
-var old_longitude = false;
-var lotsWeVisited = {};
-var marker = false;
-var lot_polygons = [];
+var map                     = L.map('map', { 'zoomControl': false } ).setView( [46.50105, -63.2014], 9);
+var old_latitude            = false;
+var old_longitude           = false;
+var lotsWeVisited           = {};
+var lot_polygons            = [];
+var marker                  = false;
+var circle                  = false;
 
 /**
 * Initialize the opening page.
 */
 $('#page-lot').on('pageinit',function() {
 
-//     localStorage.lotsWeVisited = undefined;
-
     if (localStorage.lotsWeVisited !== undefined && localStorage.lotsWeVisited !== 'false') {
-        console.log("Found previously-visited lots!");
-        console.log(localStorage.lotsWeVisited);
         lotsWeVisited = JSON.parse(localStorage.lotsWeVisited);
     }
-    
-    console.log(lotsWeVisited);
     
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 18,
@@ -48,7 +43,6 @@ $('#page-lot').on('pageinit',function() {
             }
             lot_polygons[feature.properties.LOT] = polygon;
             if (lotsWeVisited[feature.properties.LOT]) {
-                console.log("We were here before!");
                 polygon.setStyle({ 'fillColor': '#f00' });
             }
         }
@@ -62,9 +56,12 @@ $('#page-lot').on('pageinit',function() {
             if ((e.longitude != old_longitude) || (e.latitude != old_latitude)) {
                 if (marker != false) {
                     marker.setLatLng(e.latlng).update();
+                    circle.setLatLng(e.latlng).setRadius(raduis).update();
                 }
                 else {
                     marker = L.marker(e.latlng).addTo(map);
+                    var radius = e.accuracy / 2;
+                    circle = L.circle(e.latlng, radius).addTo(map);
                 }
                 map.setView(e.latlng, 12);
 
@@ -74,14 +71,8 @@ $('#page-lot').on('pageinit',function() {
                 var mylot = findMyLot(e.longitude, e.latitude, layer);
 
                 if (!lotsWeVisited.hasOwnProperty(mylot)) {
-                    console.log("On a new lot!");
                     lotsWeVisited[mylot.toString()] = Date().toString();
-                    console.log(mylot);
-                    console.log(lotsWeVisited);
-                    console.log(JSON.stringify(lotsWeVisited));
-
                     localStorage.lotsWeVisited = JSON.stringify(lotsWeVisited);
-                    console.log(localStorage.lotsWeVisited);
                 }
 
                 if (mylot) {
