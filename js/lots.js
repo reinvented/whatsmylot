@@ -17,7 +17,8 @@ var circle                  = false;
 */
 $('#page-lot').on('pageinit',function() {
 
-    $("tryagain_button").bind( "click", function(event, ui) {
+    $("tryagain_button").on( "click", function(event, ui) {
+        console.log("Reloading page.");
         document.location.href = 'index.html';
     });
 
