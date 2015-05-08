@@ -17,6 +17,10 @@ var circle                  = false;
 */
 $('#page-lot').on('pageinit',function() {
 
+    $("tryagain_button").bind( "click", function(event, ui) {
+        document.location.href = 'index.html';
+    });
+
     if (localStorage.lotsWeVisited !== undefined && localStorage.lotsWeVisited !== 'false') {
         lotsWeVisited = JSON.parse(localStorage.lotsWeVisited);
     }
@@ -55,6 +59,7 @@ $('#page-lot').on('pageinit',function() {
             $('#location_notes').html("<p>Your location could not be determined.</p><p><a href='#page-help'>Learn more here</a>.");
             $('#navbar').hide();
             $('#number').hide();
+            $('#tryagain_button').show();
             console.log("Location finding error: " + e.message);
         })
         .on('locationfound', function(e){
