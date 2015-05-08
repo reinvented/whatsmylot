@@ -51,6 +51,10 @@ $('#page-lot').on('pageinit',function() {
     L.control.zoom( { 'position': 'topright' }).addTo(map);
 
     map.locate({setView: false, watch: true, enableHighAccuracy: true}) /* This will return map so you can do chaining */
+        .on('locationerror', function(){
+            $('#location_notes').html("<p>Your location could not be determined.</p><p><a href='#page-help'>Learn more here</a>.");
+            $('#navbar').hide();
+        })
         .on('locationfound', function(e){
             
             if ((e.longitude != old_longitude) || (e.latitude != old_latitude)) {
@@ -110,12 +114,7 @@ $('#page-lot').on('pageinit',function() {
             else {
                 console.log("Location hasn't changed.");
             }
-        })
-       .on('locationerror', function(){
-            $('#location_notes').html("<p>Your location could not be determined.</p><p><a href='#page-help'>Learn more here</a>.");
-            $('#navbar').hide();
         });
-
 });
 
 /**
