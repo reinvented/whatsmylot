@@ -55,8 +55,9 @@ $('#page-lot').on('pageinit',function() {
     
     L.control.zoom( { 'position': 'topright' }).addTo(map);
 
-    map.locate({setView: false, watch: true, enableHighAccuracy: true}) /* This will return map so you can do chaining */
+    map.locate({setView: false, watch: true, enableHighAccuracy: true, timeout: 30000}) /* This will return map so you can do chaining */
         .on('locationerror', function(e){
+            $('#lotlabel').html("WHERE ARE YOU?");
             $('#location_notes').html("<p>Your location could not be determined.</p><p><a href='#page-help'>Learn more here</a>.");
             $('#navbar').hide();
             $('#number').hide();
@@ -114,9 +115,10 @@ $('#page-lot').on('pageinit',function() {
                     $('#number').css('letter-spacing', 'normal');
                     $('#lotlabel').html("YOU ARE");
                     $('#number').html("NOT ON PEI");
-                    $('#location_notes').html("If you <i>are</i> on Prince Edward Island, then your device has, alas, misidentified your location.</p>If you actually <i>are not</i> on PEI, why not?</p><p><a href='#page-help'>Learn more here</a>.");
+                    $('#location_notes').html("If you <i>are</i> on Prince Edward Island, then your device has misidentified your location.</p>If you actually <i>are not</i> on PEI, why not?</p><p><a href='#page-help'>Learn more here</a>.");
                     $('#infobutton').hide();
                     $('#navbar').hide();
+                    console.log("Placed at " + e.longitude + "," + e.latitude);
                 }
             }
             else {
@@ -129,7 +131,8 @@ $('#page-lot').on('pageinit',function() {
 * Ensure that the map is rendered to fill all available space.
 */
 $(window).on('orientationchange pageshow resize', function () {
-    $("#map").height($(window).height());
+    
+    $("#map").height($(window).height()-45);
     map.invalidateSize();
 });
 
@@ -203,6 +206,6 @@ function showAccuracy(x) {
     return '(Accurate to ' + Math.round(x / 1000) + ' km)';
   }
   else {
-    return '(Accurate to ' + x + ' m)';
+    return '(Accurate to ' + Math.round(x) + ' m)';
   }
 }
