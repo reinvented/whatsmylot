@@ -112,9 +112,7 @@ $('#page-lot').on('pageinit',function() {
             }
         })
        .on('locationerror', function(){
-            $('#number').css('font-size', '32pt');
-            $('#number').css('letter-spacing', 'normal');
-            $('#number').html("<div id='waitmessage'>FINDING YOUR LOT</div><img src='style/spinner.gif'>");
+            $('#location_notes').html("<p>Your location could not be determined.</p><p><a href='#page-help'>Learn more here</a>.");
             $('#navbar').hide();
         });
 
