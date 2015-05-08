@@ -54,6 +54,7 @@ $('#page-lot').on('pageinit',function() {
         .on('locationerror', function(){
             $('#location_notes').html("<p>Your location could not be determined.</p><p><a href='#page-help'>Learn more here</a>.");
             $('#navbar').hide();
+            $('#number').hide();
         })
         .on('locationfound', function(e){
             
