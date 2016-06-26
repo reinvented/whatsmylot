@@ -25,7 +25,7 @@ $('#page-lot').on('pageinit',function() {
     if (localStorage.lotsWeVisited !== undefined && localStorage.lotsWeVisited !== 'false') {
         lotsWeVisited = JSON.parse(localStorage.lotsWeVisited);
     }
-    
+
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 18,
       attribution: 'Map data (c) OpenStreetMap contributors'
@@ -52,7 +52,7 @@ $('#page-lot').on('pageinit',function() {
             }
         }
     }).addTo(map);
-    
+
     L.control.zoom( { 'position': 'topright' }).addTo(map);
 
     map.locate({setView: false, watch: true, enableHighAccuracy: true, timeout: 30000}) /* This will return map so you can do chaining */
@@ -65,7 +65,7 @@ $('#page-lot').on('pageinit',function() {
             console.log("Location finding error: " + e.message);
         })
         .on('locationfound', function(e){
-            
+
             if ((e.longitude != old_longitude) || (e.latitude != old_latitude)) {
                 if (marker != false) {
                     marker.setLatLng(e.latlng).update();
@@ -131,7 +131,7 @@ $('#page-lot').on('pageinit',function() {
 * Ensure that the map is rendered to fill all available space.
 */
 $(window).on('orientationchange pageshow resize', function () {
-    
+
     $("#map").height($(window).height()-45);
     map.invalidateSize();
 });
@@ -169,25 +169,25 @@ function updateLotInfo(mylot) {
 
     var meta = metadata[mylot];
 
-    $('#info_county').html(meta.county + " County");  
-    if (meta.parish) {  
-        $('#info_parish').html(meta.parish + " Parish");    
+    $('#info_county').html(meta.county + " County");
+    if (meta.parish) {
+        $('#info_parish').html(meta.parish + " Parish");
     }
 
-    if (meta.rating_1767) {  
-        $('#info_condition').html("Holland's Rating: " + meta.rating_1767);    
+    if (meta.rating_1767) {
+        $('#info_condition').html("Holland's Rating: " + meta.rating_1767);
     }
 
-    if (meta.drawn_by) {  
-        $('#info_drawnby').html("Original landlord " + meta.drawn_by);    
-    }    
+    if (meta.drawn_by) {
+        $('#info_drawnby').html("Original landlord " + meta.drawn_by);
+    }
 
-    $('#info_bio').html('<p>' + meta.notes + '</p>');    
+    $('#info_bio').html('<p>' + meta.notes + '</p>');
 
     $('#info_acres_holland').html(numberWithCommas(meta.acres_holland) + ' acres');
     $('#info_acres_clark').html(numberWithCommas(meta.acres_clark) + ' acres');
     $('#info_acres_modern').html(numberWithCommas(meta.acres_modern) + ' acres');
-    
+
     $('#content_info').show();
 }
 

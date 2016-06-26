@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="leaflet/leaflet.label.css" />
     </head>
     <body>
-    
+
         <div data-role="page" data-theme="a" id="page-lot" data-position="fixed">
             <div data-role="header" data-theme="a" data-nobackbtn="true">
                 <h1>What's My Lot?</h1>
@@ -38,13 +38,13 @@
                 </div>
                 <button id="tryagain_button">Try Again</button>
                 <div id="navbar">
-                  <a href="#page-info"><img id="infobutton" src="style/infoicon.png" alt="Information about lot"></a> 
+                  <a href="#page-info"><img id="infobutton" src="style/infoicon.png" alt="Information about lot"></a>
                   <a href="#page-map"><img id="mapbutton" src="style/mapicon.png" alt="Map showing lot"></a>
                   <a href="#page-help"><img id="helpbutton" src="style/helpicon.png" alt="Help"></a>
                 </div>
             </div>
         </div>
-        
+
         <div data-role="page" data-theme="a" id="page-map" data-position="fixed">
             <div data-role="header" data-theme="a" data-add-back-btn="true">
                 <h1>What's My Lot?</h1>
@@ -53,7 +53,7 @@
                 <div id="map"></div>
             </div>
         </div>
-        
+
         <div data-role="page" data-theme="a" id="page-info" data-position="fixed">
             <div data-role="header" data-theme="a" data-add-back-btn="true">
                 <h1>About This Lot</h1>
@@ -84,17 +84,17 @@
                         <th>Modern Map</th>
                         <td id="info_acres_modern"></td>
                     </tr>
-                </table>            
-            </div>      
+                </table>
+            </div>
         </div>
 
         <div data-role="page" data-theme="a" id="page-help" data-position="fixed">
-        
+
             <div data-role="header" data-theme="a" data-add-back-btn="true">
                 <h1>What's My Lot Help</h1>
             </div>
             <div data-role="content" id="content_help">
-        
+
                 <h2>My location is wrong!</h2>
 
                 <p>This app relies on your device and your web browser to identify your location.
@@ -102,31 +102,31 @@
                 very accurate. If you're using a <b>desktop or laptop connected to home or office Internet</b>,
                 this is an "educated guess" based on your Internet connection, and it's possible it might
                 be wildly inaccurate, placing you in a different lot, or even in a different province.</p>
-        
+
                 <h2>I'm not on Prince Edward Island! What good is this?</h2>
-                
+
                 <p>Why aren't you on Prince Edward Island?  <a href="tel:18004634734">Operators are standing by to
                 help you plan your trip here</a>.</p>
-                
+
                 <p>This is an app designed and built for people standing on
                 Prince Edward Island soil; if you're not then, alas, we can't help you. But the
                 <a href="http://samuelholland250pei.ca/" target="_BLANK">Samuel Holland 250</a> folks can.</p>
 
                 <h2>Who made this?</h2>
-            
-                <p>This is a my project, and I'm Peter Rukavina, 
+
+                <p>This is a my project, and I'm Peter Rukavina,
                 <a href="http://hacker.vre.upei.ca/" target="_BLANK">Hacker in
                 Residence, University of Prince Edward Island, Robertson
                 Library</a>.</p>
-                
+
                 <h2>How can I contact you?</h2>
-                
+
                 <p>You can email me at <a href="mailto:whatsmylot@reinvented.net">whatsmylot@reinvented.net</a> with
                 questions, concerns, suggestions, complaints. Remember, I'm just a guy who made an app in his
                 spare time.</p>
-                
+
                 <h2>What's a lot?</h2>
-            
+
                 <p>If you're on Prince Edward Island, this app uses the
                 location of your device to calculate what <b>lot</b> (or "township")
                 you're in. There are 67 lots and three "royalties" (Charlottetown,
@@ -134,7 +134,7 @@
                 Samuel Holland in 1765. While they are largely no longer in
                 contemporary use, they are irrevocably imprinted on the Island
                 landscape, through the shapes of roads and property lines.</p>
-            
+
                 <h2>What does this app do?</h2>
 
                 <p>The app will look up your location, and either (a) display the
@@ -144,20 +144,20 @@
                 all appearances to the contrary).</p>
 
                 <h2>You can leave it running...</h2>
-            
+
                 <p>As long as you have the app open, it will continue to update
                 the lot number, so if you go for a drive in the countryside, you can
                 watch it update as you cross lot lines.</p>
-            
+
                 <h2>Visit all 67 lots!</h2>
-            
+
                 <p>The app will also <i>remember</i> which lots you've visited,
                 and will colour-code these in red on the map.</p>
 
                 <h2>Lot Information</h2>
-                
+
                 <p>On the information page about each lot you'll find the following information:</p>
-                
+
                 <ul>
                     <li>The <b>name or number</b> of the lot or royalty.</li>
                     <li>The <b>county</b> &ndash; Prince, Queens or Kings &ndash; that the lot is located in.</li>
@@ -169,52 +169,52 @@
                 </ul>
 
                 <h2>Source Material</h2>
-            
-                <p>The source for the digital map layer used to calculate your lot is a modified version of 
+
+                <p>The source for the digital map layer used to calculate your lot is a modified version of
                 <a href="http://www.gov.pe.ca/gis/index.php3?number=1011342&amp;lang=E" target="_BLANK">L.R.I.S., 20050725, Prince Edward Island Townships:
                 Prince Edward Island Finance and Municipal Affairs, Taxation and
                 Property Records, Geomatic Services, Charlottetown, Prince Edward
                 Island, Canada.</a> This map has issues that I have attempted to
                 correct, in part using <a href="http://www.islandimagined.ca/fedora/repository/imagined%3A209165" target="_BLANK>">this 1852 redrawing of the map</a>:</p>
-            
+
                 <ul>
-                    <li>Princetown Royalty was missing. I split the Lot 18 polygon along Rte. 103 from Malpeque Bay, and then along the 
-                        Champion Road, across the Baltic River, and along the Roache Road and the Shore Road to the Darnley Basin, 
+                    <li>Princetown Royalty was missing. I split the Lot 18 polygon along Rte. 103 from Malpeque Bay, and then along the
+                        Champion Road, across the Baltic River, and along the Roache Road and the Shore Road to the Darnley Basin,
                         using the 1880 <a href="http://137.149.200.109:8080/fedora/get/imagined:208400/ilives:jp2Sdef/getRegion?uid=&amp;level=3" target="_BLANK">Meacham's Atlas
                         Princetown Royalty map</a> as a guide.</li>
                     <li>Lot 50 was mislabelled as Lot 66 and Lot 66 was unlabelled.</li>
                     <li>Georgetown Royalty was mislabelled as Lot 73.</li>
                 </ul>
-            
+
                 <p>The original ESRI Shapefile was reprojected to WGS84, edited
                 for correctness as above, lots with multiple polygons were
                 consolidated into a single polygon, and the polygons were simplified,
                 using QGIS, to reduce the complexity, and thus the file size, of the
                 resulting map. The map was then exported from QGIS into a GeoJSON
                 file.</p>
-                
+
                 <p>The updated map is available <a href="https://github.com/reinvented/hollandmap" target="_BLANK">in several
                 formats</a> for use in other projects under a Creative Commons license.</p>
-                            
+
                 <p>The base map appearing under the township lines is <a href="http://www.openstreetmap.org" target="_BLANK">OpenStreetMap</a>.</p>
 
                 <p>Information about each lot and royalty, along with the brief biographical note of the original owner
-                was assembled by Boyde Beck, Curator of History, Exhibits and Editor of The Island Magazine for 
+                was assembled by Boyde Beck, Curator of History, Exhibits and Editor of The Island Magazine for
                 <a href="http://www.peimuseum.com/" target="_BLANK">PEI Museum &amp; Heritage Foundation</a>.</p>
 
                 <h2>Open Source</h2>
-            
+
                 <p>The calculation of which lot your current location falls in is
-                done by <a href="https://github.com/mapbox/leaflet-pip" target="_BLANK">point 
+                done by <a href="https://github.com/mapbox/leaflet-pip" target="_BLANK">point
                 in polygon for Leaflet</a>, a plugin for the
                 excellent <a href="http://leafletjs.com/" target="_BLANK">open-source
                 JavaScript library for interactive maps</a>.</p>
-                
+
                 <p>The app uses the <a href="http://jquery.org/" target="_BLANK">jQuery</a> and <a href="http://jquerymobile.com/" target="_BLANK">jQuery Mobile</a>.</p>
 
                 <p>The icons are from Google's open sourced <a href="https://github.com/google/material-design-icons/releases/tag/1.0.0" target="_BLANK">Material Design Icons</a>.</p>
 
-            </div>    
+            </div>
         </div>
         <!-- Why are the JavaScripts down here?  Check out http://developer.yahoo.com/blogs/ydn/high-performance-sites-rule-6-move-scripts-bottom-7200.html -->
         <script src="js/jquery-1.10.2.min.js"></script>
@@ -223,7 +223,7 @@
         <script src="leaflet/leaflet.label.js"></script>
         <script src="leaflet/leaflet-pip.min.js"></script>
         <script src="js/lots.js"></script><!-- Local JavaScript. The guts of the app are in here. -->
-        <script src="data/pei-lots-wgs84-simplified.geojson"></script>
-        <script src="data/lot-data.json"></script>
+        <script src="data/pei-lots-wgs84-simplified.js"></script>
+        <script src="data/lot-data.js"></script>
     </body>
 </html>
